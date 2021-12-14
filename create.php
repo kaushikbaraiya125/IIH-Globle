@@ -8,7 +8,7 @@ if (isset($_POST['save'])) {
     $city = $_POST['city'];
     $hobbies = implode(",", $_POST['hobbies']);
     
-    // If upload button is clicked ...
+    
     if (isset($_FILES['profile_image'])) {    
         $filename = $_FILES["profile_image"]["name"];
         $tempname = $_FILES["profile_image"]["tmp_name"];    

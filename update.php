@@ -9,7 +9,7 @@ if (count($_POST) > 0) {
     $city = $_POST['city'];
     $hobbies = implode(",", $_POST['hobbies']);
 
-    // If upload button is clicked ...
+    
     if (isset($_FILES['profile_image'])) {    
         $filename = $_FILES["profile_image"]["name"];
         $tempname = $_FILES["profile_image"]["tmp_name"];    
@@ -17,7 +17,7 @@ if (count($_POST) > 0) {
     }
      
     mysqli_query($conn, "UPDATE users set name='" . $name . "', contact_number='" . $contact_number . "' ,email='" . $email . "',hobbies='" . $hobbies . "',city='" . $city . "',state='" . $state . "',profile_image='" . $filename . "' WHERE id='" . $_POST['id'] . "'");
-     // Now let's move the uploaded image into the folder: image
+
     if (move_uploaded_file($tempname, $folder))  {
         $msg = "Image uploaded successfully";
     }
